@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
+  <test name="test1">
+    <classes>
+      <class name="com.main.test.ReadingExcelData"/>
+    </classes>
+  </test> <!-- test1 -->
+  <test name="test2">
+    <classes>
+      <class name="com.main.test.TestBase"/>
+    </classes>
+  </test> <!-- test2 -->
+  <test name="test2(failed)">
+    <classes>
+      <class name="com.main.test.TestBase">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="register"/>
+          <include name="openBrowser"/>
+          <include name="click_logOut"/>
+          <include name="selectFlight"/>
+          <include name="signIn"/>
+          <include name="buyFlight"/>
+          <include name="flightFinder"/>
+        </methods>
+      </class> <!-- com.main.test.TestBase -->
+    </classes>
+  </test> <!-- test2(failed) -->
+</suite> <!-- Failed suite [Suite1] -->
