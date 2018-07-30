@@ -1,5 +1,3 @@
-package com.main.test;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -31,13 +29,12 @@ public class TestBase {
 	public ExtentTest logger;
 	public static XSSFWorkbook wb;
 	public static XSSFSheet sheet;
-	Map<String, Object[]> TestNGResults;
 
 	public String fname, lname, email, pwd, cpwd;
 	public FileInputStream fis;
 	public int length;
 
-	String sPath = "D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\dataEngine\\DataEngine.xlsx";
+	String sPath = "D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\test\\java\\dataEngine\\DataEngine.xlsx";
 
 	@BeforeTest
 	public void openBrowser() throws Exception {
@@ -72,7 +69,7 @@ public class TestBase {
 		String result = "FAIL";
 		try {
 			fis = new FileInputStream(
-					"C:\\Users\\Swathi\\git\\TestFramework\\src\\test\\java\\ExcelUtilityz\\RegisterData.xlsx");
+					"D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\test\\java\\dataEngine\\Registeration.xlsx");
 			wb = new XSSFWorkbook(fis);
 			sheet = wb.getSheet("Sheet1");
 			length = sheet.getLastRowNum();
@@ -92,7 +89,7 @@ public class TestBase {
 				driver.findElement(By.name("password")).sendKeys(pwd);
 				driver.findElement(By.name("confirmPassword")).sendKeys(cpwd);
 				driver.findElement(By.name("register")).click();
-
+				System.out.println("Registeration successfully");
 				logger = extent.startTest("register",
 						"registeration successfully");
 				logger.log(LogStatus.PASS, "registeration successfully");

@@ -1,4 +1,3 @@
-package com.main.test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,7 +22,7 @@ public class ReadingExcelData {
 
 	public static void setExcelFiletoSetStatus(int rowNumber, String resultData)
 			throws Exception {
-		String sPath = "D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\dataEngine\\DataEngine.xlsx";
+		String sPath = "D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\test\\java\\dataEngine\\DataEngine.xlsx";
 		fis = new FileInputStream(sPath);
 		ExcelWBook = new XSSFWorkbook(fis);
 		ExcelWSheet = ExcelWBook.getSheet("sheet1");
@@ -33,7 +32,7 @@ public class ReadingExcelData {
 		fis.close();
 		fos = new FileOutputStream(
 				new File(
-						"D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\dataEngine\\DataEngine.xlsx"));
+						"D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\test\\java\\dataEngine\\DataEngine.xlsx"));
 		ExcelWBook.write(fos);
 		fos.close();
 
@@ -41,7 +40,7 @@ public class ReadingExcelData {
 	
 	public static void setExcelFiletoSendComment(int rowNumber, String comment)
 			throws Exception {
-		String sPath = "D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\dataEngine\\DataEngine.xlsx";
+		String sPath = "D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\test\\java\\dataEngine\\DataEngine.xlsx";
 		fis = new FileInputStream(sPath);
 		ExcelWBook = new XSSFWorkbook(fis);
 		ExcelWSheet = ExcelWBook.getSheet("sheet1");
@@ -51,7 +50,7 @@ public class ReadingExcelData {
 		fis.close();
 		fos = new FileOutputStream(
 				new File(
-						"D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\dataEngine\\DataEngine.xlsx"));
+						"D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\test\\java\\dataEngine\\DataEngine.xlsx"));
 		ExcelWBook.write(fos);
 		fos.close();
 
