@@ -1,3 +1,4 @@
+package com.test.itest;
 import java.io.FileInputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -8,6 +9,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.IAnnotationTransformer;
 import org.testng.annotations.ITestAnnotation;
 
+import com.main.base.TestBase;
+
+/**
+ * @author Swathi
+ *
+ */
 public class DemoApplication extends TestBase implements IAnnotationTransformer{
 
 	public static XSSFWorkbook wb;
@@ -20,6 +27,12 @@ public class DemoApplication extends TestBase implements IAnnotationTransformer{
 	public String AllMethods[];
 	public ArrayList<String> ar;
 
+	
+	/**
+	 * This method is used to get the methods from the TestBase class 
+	 * and check the execute flag value based on flag value it bypass the methods.
+	 * 
+	 */
 	public void transform(ITestAnnotation annotation, Class testClass,
 			Constructor testConstructor, Method testMethod) {
 

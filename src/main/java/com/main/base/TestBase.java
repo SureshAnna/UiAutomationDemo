@@ -1,7 +1,8 @@
+package com.main.base;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -23,6 +24,10 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+/**
+ * @author Swathi
+ *
+ */
 public class TestBase {
 	public static WebDriver driver;
 	public ExtentReports extent;
@@ -36,13 +41,17 @@ public class TestBase {
 
 	String sPath = "D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\test\\java\\dataEngine\\DataEngine.xlsx";
 
+	/**
+	 * This method is used to open the brwoser and redirect to newtour site
+	 */
+
 	@BeforeTest
 	public void openBrowser() throws Exception {
 		try {
 
 			String workingDir = System.getProperty("user.dir");
 			extent = new ExtentReports(workingDir
-					+ "\\test-output\\Reports\\workspace.html");
+					+ "\\test-output\\Reports\\ExtentReport.html");
 			extent.addSystemInfo("Host Name", "Sample");
 			extent.addSystemInfo("Environment", "Automation Testing");
 			extent.addSystemInfo("User Name", "Swathi");
@@ -63,6 +72,11 @@ public class TestBase {
 		}
 
 	}
+
+	/**
+	 * This method is used to register the application and taking results
+	 * dynamically
+	 */
 
 	@Test(enabled = true, priority = 1)
 	public void register() throws Exception {
@@ -89,50 +103,58 @@ public class TestBase {
 				driver.findElement(By.name("password")).sendKeys(pwd);
 				driver.findElement(By.name("confirmPassword")).sendKeys(cpwd);
 				driver.findElement(By.name("register")).click();
-				System.out.println("Registeration successfully");
-				logger = extent.startTest("register",
-						"registeration successfully");
-				logger.log(LogStatus.PASS, "registeration successfully");
+
 				if (LogStatus.PASS != null) {
 					result = "PASS";
-					ReadingExcelData.setExcelFiletoSetStatus(1, result);
+					ExcelData.setExcelFiletoSetStatus(1, result);
 
 				}
 			}
+			logger = extent.startTest("register", "registeration successfully");
+			System.out.println("Registeration successfully");
+			logger.log(LogStatus.PASS, "registeration successfully");
 
 		} catch (FileNotFoundException e) {
 			String message = e.getMessage();
-			ReadingExcelData.setExcelFiletoSetStatus(1, result);
-			ReadingExcelData.setExcelFiletoSendComment(1, message);
+			ExcelData.setExcelFiletoSetStatus(1, result);
+			ExcelData.setExcelFiletoSendComment(1, message);
 			logger.log(LogStatus.FAIL, "registeration Failed");
 
 		}
 	}
+
+	/**
+	 * This method is used to sign to the newtour application with registered
+	 * data.
+	 */
 
 	@Test(enabled = true, priority = 2)
 	public void signIn() throws Exception {
 		String result = "FAIL";
 		try {
 			driver.get("http://newtours.demoaut.com/mercurysignon.php");
-			driver.findElement(By.name("userName")).sendKeys("TestUser_11");
-			driver.findElement(By.name("password")).sendKeys("Test@1234");
+			driver.findElement(By.name("userName")).sendKeys("TestUseremail1@Test.com");
+			driver.findElement(By.name("password")).sendKeys("Sample123");
 			driver.findElement(By.name("login")).click();
 			System.out.println("Login succssfully");
 			logger.log(LogStatus.PASS, "signin verified");
 			if (LogStatus.PASS != null) {
 				result = "PASS";
-				ReadingExcelData.setExcelFiletoSetStatus(2, result);
+				ExcelData.setExcelFiletoSetStatus(2, result);
 
 			}
 		} catch (Exception e) {
 			String message = e.getMessage();
-			ReadingExcelData.setExcelFiletoSetStatus(2, result);
-			ReadingExcelData.setExcelFiletoSendComment(2, message);
+			ExcelData.setExcelFiletoSetStatus(2, result);
+			ExcelData.setExcelFiletoSendComment(2, message);
 			logger.log(LogStatus.FAIL, "signin failed");
 		}
 
 	}
 
+	/**
+	 * This method is used to find the flights availability.
+	 */
 	@Test(enabled = true, priority = 3)
 	public void flightFinder() throws Exception {
 		String result = "FAIL";
@@ -142,20 +164,25 @@ public class TestBase {
 			oSelect.selectByVisibleText("1");
 			System.out.println("find flights successfully");
 			driver.findElement(By.name("findFlights")).click();
-			logger.log(LogStatus.PASS, "checking available successfully");
+			logger.log(LogStatus.PASS,
+					"checking flights available successfully");
 			if (LogStatus.PASS != null) {
 				result = "PASS";
-				ReadingExcelData.setExcelFiletoSetStatus(3, result);
+				ExcelData.setExcelFiletoSetStatus(3, result);
 
 			}
 		} catch (Exception e) {
 			String message = e.getMessage();
 			logger.log(LogStatus.FAIL, "checking available failed");
-			ReadingExcelData.setExcelFiletoSetStatus(3, result);
-			ReadingExcelData.setExcelFiletoSendComment(3, message);
+			ExcelData.setExcelFiletoSetStatus(3, result);
+			ExcelData.setExcelFiletoSendComment(3, message);
 		}
 
 	}
+
+	/**
+	 * This method is used to select the available flights.
+	 */
 
 	@Test(enabled = true, priority = 4)
 	public void selectFlight() throws Exception {
@@ -166,16 +193,20 @@ public class TestBase {
 			logger.log(LogStatus.PASS, "selected flight");
 			if (LogStatus.PASS != null) {
 				result = "PASS";
-				ReadingExcelData.setExcelFiletoSetStatus(4, result);
+				ExcelData.setExcelFiletoSetStatus(4, result);
 
 			}
 		} catch (Exception e) {
 			String message = e.getMessage();
 			logger.log(LogStatus.FAIL, "selected flight failed");
-			ReadingExcelData.setExcelFiletoSetStatus(4, result);
-			ReadingExcelData.setExcelFiletoSendComment(4, message);
+			ExcelData.setExcelFiletoSetStatus(4, result);
+			ExcelData.setExcelFiletoSendComment(4, message);
 		}
 	}
+
+	/**
+	 * This method is used to book the available flight.
+	 */
 
 	@Test(enabled = true, priority = 5)
 	public void buyFlight() throws Exception {
@@ -186,17 +217,21 @@ public class TestBase {
 			logger.log(LogStatus.PASS, "flights booked");
 			if (LogStatus.PASS != null) {
 				result = "PASS";
-				ReadingExcelData.setExcelFiletoSetStatus(5, result);
+				ExcelData.setExcelFiletoSetStatus(5, result);
 
 			}
 		} catch (Exception e) {
 			String message = e.getMessage();
 			logger.log(LogStatus.FAIL, "flights booking failed");
-			ReadingExcelData.setExcelFiletoSetStatus(5, result);
-			ReadingExcelData.setExcelFiletoSendComment(5, message);
+			ExcelData.setExcelFiletoSetStatus(5, result);
+			ExcelData.setExcelFiletoSendComment(5, message);
 		}
 
 	}
+
+	/**
+	 * This method is used to close the browser.
+	 */
 
 	@Test(enabled = true, priority = 6)
 	public void closeBrowser() throws Exception {
@@ -206,16 +241,20 @@ public class TestBase {
 			logger.log(LogStatus.PASS, "closed application successfully");
 			if (LogStatus.PASS != null) {
 				result = "PASS";
-				ReadingExcelData.setExcelFiletoSetStatus(6, result);
+				ExcelData.setExcelFiletoSetStatus(6, result);
 
 			}
 		} catch (Exception e) {
 			String message = e.getMessage();
 			logger.log(LogStatus.FAIL, "closed application failed");
-			ReadingExcelData.setExcelFiletoSetStatus(6, result);
-			ReadingExcelData.setExcelFiletoSendComment(6, message);
+			ExcelData.setExcelFiletoSetStatus(6, result);
+			ExcelData.setExcelFiletoSendComment(6, message);
 		}
 	}
+
+	/**
+	 * This method is used to take the failed method screenshots.
+	 */
 
 	@AfterMethod
 	public void screenShot(ITestResult result) {
@@ -241,6 +280,10 @@ public class TestBase {
 		}
 		extent.endTest(logger);
 	}
+
+	/**
+	 * This method is used to close the extent report.
+	 */
 
 	@AfterTest
 	public void afterTest() {

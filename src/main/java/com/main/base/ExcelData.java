@@ -1,15 +1,19 @@
+package com.main.base;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ReadingExcelData {
+/**
+ * @author Swathi
+ *
+ */
+public class ExcelData {
 
 	public String ExecuteFlag;
 	public static String data = null;
@@ -18,8 +22,15 @@ public class ReadingExcelData {
 	private static XSSFCell Cell;
 	static FileInputStream fis;
 	static FileOutputStream fos;
-	
 
+	/**
+	 * This method is used to read the excel and write the status result
+	 * pass/fail in excel.
+	 * 
+	 * @param rowNumber
+	 * @param resultData
+	 * @throws Exception
+	 */
 	public static void setExcelFiletoSetStatus(int rowNumber, String resultData)
 			throws Exception {
 		String sPath = "D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\test\\java\\dataEngine\\DataEngine.xlsx";
@@ -37,7 +48,15 @@ public class ReadingExcelData {
 		fos.close();
 
 	}
-	
+
+	/**
+	 * This method is used to read the excel and write the failure exception in
+	 * comment cell in excel.
+	 * 
+	 * @param rowNumber
+	 * @param comment
+	 * @throws Exception
+	 */
 	public static void setExcelFiletoSendComment(int rowNumber, String comment)
 			throws Exception {
 		String sPath = "D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\test\\java\\dataEngine\\DataEngine.xlsx";
@@ -56,31 +75,18 @@ public class ReadingExcelData {
 
 	}
 
+	/**
+	 * it takes row number and column number from the excel
+	 * 
+	 * @param RowNum
+	 * @param ColNum
+	 * @return
+	 * @throws Exception
+	 */
 	public static String getCellData(int RowNum, int ColNum) throws Exception {
 		Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
 		String CellData = Cell.getStringCellValue();
-		System.out.println("CellData----" + CellData);
 		return CellData;
-	}
-
-	public static void get() throws IOException {
-
-		try {
-			// setExcelFile("data");
-			int length = ExcelWSheet.getLastRowNum();
-			System.out.println("length..........." + length);
-			for (int iRow = 1; iRow <= length; iRow++) {
-				String ExecuteFlag = ExcelWSheet.getRow(iRow).getCell(3)
-						.getStringCellValue();
-				if (ExecuteFlag.equals("Yes")) {
-					data = getCellData(iRow, 2);
-					System.out.println("the data is " + data);
-				}
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 }

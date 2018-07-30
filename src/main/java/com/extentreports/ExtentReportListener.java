@@ -1,3 +1,4 @@
+package com.extentreports;
 import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
@@ -16,9 +17,17 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+
+/**
+ * @author Swathi
+ *
+ */
 public class ExtentReportListener implements IReporter {
 	private ExtentReports extent;
 
+	/* (non-Javadoc)
+	 * @see org.testng.IReporter#generateReport(java.util.List, java.util.List, java.lang.String)
+	 */
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
 			String outputDirectory) {
 		extent = new ExtentReports(outputDirectory + File.separator
