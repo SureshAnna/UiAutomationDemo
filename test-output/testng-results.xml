@@ -1,36 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="84970" started-at="2018-07-26T12:06:42Z" finished-at="2018-07-26T12:08:07Z">
+  <suite name="Default suite" duration-ms="100817" started-at="2018-07-31T08:00:25Z" finished-at="2018-07-31T08:02:06Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="84970" started-at="2018-07-26T12:06:42Z" finished-at="2018-07-26T12:08:07Z">
-      <class name="com.main.test.TestBase">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.main.test.TestBase@1c33c17b]" name="openBrowser" is-config="true" duration-ms="5828" started-at="2018-07-26T17:36:42Z" finished-at="2018-07-26T17:36:48Z">
+    <test name="Default test" duration-ms="100817" started-at="2018-07-31T08:00:25Z" finished-at="2018-07-31T08:02:06Z">
+      <class name="com.test.itest.DemoApplication">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.test.itest.DemoApplication@4e1d422d]" name="openBrowser" is-config="true" duration-ms="13420" started-at="2018-07-31T13:30:25Z" finished-at="2018-07-31T13:30:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="signIn()[pri:2, instance:com.main.test.TestBase@1c33c17b]" name="signIn" duration-ms="78854" started-at="2018-07-26T17:36:48Z" finished-at="2018-07-26T17:38:06Z">
+        <test-method status="PASS" signature="register()[pri:1, instance:com.test.itest.DemoApplication@4e1d422d]" name="register" duration-ms="68066" started-at="2018-07-31T13:30:38Z" finished-at="2018-07-31T13:31:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- signIn -->
-        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:com.main.test.TestBase@1c33c17b]" name="screenShot" is-config="true" duration-ms="3" started-at="2018-07-26T17:38:06Z" finished-at="2018-07-26T17:38:06Z">
+        </test-method> <!-- register -->
+        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:com.test.itest.DemoApplication@4e1d422d]" name="screenShot" is-config="true" duration-ms="3" started-at="2018-07-31T13:31:46Z" finished-at="2018-07-31T13:31:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=signIn status=SUCCESS method=TestBase.signIn()[pri:2, instance:com.main.test.TestBase@1c33c17b] output={null}]]]>
+                <![CDATA[[TestResult name=register status=SUCCESS method=TestBase.register()[pri:1, instance:com.test.itest.DemoApplication@4e1d422d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShot -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.main.test.TestBase@1c33c17b]" name="afterTest" is-config="true" duration-ms="271" started-at="2018-07-26T17:38:06Z" finished-at="2018-07-26T17:38:07Z">
+        <test-method status="PASS" signature="signIn()[pri:2, instance:com.test.itest.DemoApplication@4e1d422d]" name="signIn" duration-ms="12193" started-at="2018-07-31T13:31:46Z" finished-at="2018-07-31T13:31:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signIn -->
+        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:com.test.itest.DemoApplication@4e1d422d]" name="screenShot" is-config="true" duration-ms="1" started-at="2018-07-31T13:31:59Z" finished-at="2018-07-31T13:31:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=signIn status=SUCCESS method=TestBase.signIn()[pri:2, instance:com.test.itest.DemoApplication@4e1d422d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShot -->
+        <test-method status="PASS" signature="flightFinder()[pri:3, instance:com.test.itest.DemoApplication@4e1d422d]" name="flightFinder" duration-ms="2559" started-at="2018-07-31T13:31:59Z" finished-at="2018-07-31T13:32:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightFinder -->
+        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:com.test.itest.DemoApplication@4e1d422d]" name="screenShot" is-config="true" duration-ms="0" started-at="2018-07-31T13:32:01Z" finished-at="2018-07-31T13:32:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=flightFinder status=SUCCESS method=TestBase.flightFinder()[pri:3, instance:com.test.itest.DemoApplication@4e1d422d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShot -->
+        <test-method status="PASS" signature="selectFlight()[pri:4, instance:com.test.itest.DemoApplication@4e1d422d]" name="selectFlight" duration-ms="1366" started-at="2018-07-31T13:32:01Z" finished-at="2018-07-31T13:32:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectFlight -->
+        <test-method status="PASS" signature="buyFlight()[pri:5, instance:com.test.itest.DemoApplication@4e1d422d]" name="buyFlight" duration-ms="1091" started-at="2018-07-31T13:32:03Z" finished-at="2018-07-31T13:32:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- buyFlight -->
+        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:com.test.itest.DemoApplication@4e1d422d]" name="screenShot" is-config="true" duration-ms="0" started-at="2018-07-31T13:32:03Z" finished-at="2018-07-31T13:32:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=selectFlight status=SUCCESS method=TestBase.selectFlight()[pri:4, instance:com.test.itest.DemoApplication@4e1d422d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShot -->
+        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:com.test.itest.DemoApplication@4e1d422d]" name="screenShot" is-config="true" duration-ms="1" started-at="2018-07-31T13:32:04Z" finished-at="2018-07-31T13:32:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=buyFlight status=SUCCESS method=TestBase.buyFlight()[pri:5, instance:com.test.itest.DemoApplication@4e1d422d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShot -->
+        <test-method status="PASS" signature="closeBrowser()[pri:6, instance:com.test.itest.DemoApplication@4e1d422d]" name="closeBrowser" duration-ms="1254" started-at="2018-07-31T13:32:04Z" finished-at="2018-07-31T13:32:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:com.test.itest.DemoApplication@4e1d422d]" name="screenShot" is-config="true" duration-ms="1" started-at="2018-07-31T13:32:05Z" finished-at="2018-07-31T13:32:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=closeBrowser status=SUCCESS method=TestBase.closeBrowser()[pri:6, instance:com.test.itest.DemoApplication@4e1d422d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShot -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.test.itest.DemoApplication@4e1d422d]" name="afterTest" is-config="true" duration-ms="780" started-at="2018-07-31T13:32:05Z" finished-at="2018-07-31T13:32:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.main.test.TestBase -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- com.test.itest.DemoApplication -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

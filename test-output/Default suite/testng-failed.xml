@@ -3,19 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.main.test.DemoApplication"/>
+      <class name="com.test.itest.DemoApplication"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="com.main.test.DemoApplication">
-        <methods>
-          <include name="afterTest"/>
-          <include name="register"/>
-          <include name="openBrowser"/>
-          <include name="screenShot"/>
-        </methods>
-      </class> <!-- com.main.test.DemoApplication -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
