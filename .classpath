@@ -54,7 +54,7 @@
 	<classpathentry exported="true" kind="lib" path="jars/httpcore-4.4.9.jar"/>
 	<classpathentry exported="true" kind="lib" path="jars/okhttp-3.10.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="jars/okio-1.14.1.jar"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>

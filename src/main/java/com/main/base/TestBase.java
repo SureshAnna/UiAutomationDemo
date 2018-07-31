@@ -39,7 +39,7 @@ public class TestBase {
 	public FileInputStream fis;
 	public int length;
 
-	String sPath = "D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\test\\java\\dataEngine\\DataEngine.xlsx";
+	String sPath = "C:\\Users\\Suresh\\git\\UiAutomationDemo\\src\\test\\java\\dataEngine\\DataEngine.xlsx";
 
 	/**
 	 * This method is used to open the brwoser and redirect to newtour site
@@ -51,7 +51,7 @@ public class TestBase {
 
 			String workingDir = System.getProperty("user.dir");
 			extent = new ExtentReports(workingDir
-					+ "\\test-output\\Reports\\ExtentReport.html");
+					+ "\\test-output\\ExtentReport.html");
 			extent.addSystemInfo("Host Name", "Sample");
 			extent.addSystemInfo("Environment", "Automation Testing");
 			extent.addSystemInfo("User Name", "Swathi");
@@ -59,7 +59,7 @@ public class TestBase {
 					+ "\\extent-config.xml"));
 
 			System.setProperty("webdriver.chrome.driver",
-					"D:\\SeleniumPractice\\ApiAutomationUsingReflection\\Driver\\chromedriver.exe");
+					"E:\\Selenium_Training\\Selenium_Training\\src\\Assignmnets\\drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.get("http://newtours.demoaut.com/index.php");
 
@@ -83,7 +83,7 @@ public class TestBase {
 		String result = "FAIL";
 		try {
 			fis = new FileInputStream(
-					"D:\\SeleniumPractice\\ApiAutomationUsingReflection\\src\\test\\java\\dataEngine\\Registeration.xlsx");
+					"C:\\Users\\Suresh\\git\\UiAutomationDemo\\src\\test\\java\\dataEngine\\Registeration.xlsx");
 			wb = new XSSFWorkbook(fis);
 			sheet = wb.getSheet("Sheet1");
 			length = sheet.getLastRowNum();
